@@ -7,7 +7,7 @@ class BMI():
         self.height_inches = height_inches
 
     
-    def calculate_bmi(self) -> float:
+    def bmi_calculate(self) -> float:
         feet_inch = self.height_feet * 12
         weight_kg = self.weight * 0.45 #weight from lbs to kg
         height_m = ((self.height_inches + feet_inch) * 0.025)**2 #height from ft/in to meters
@@ -16,19 +16,23 @@ class BMI():
         return final_bmi
 
 
-    def get_bmi_category(self):
+    def bmi_category(self) -> str:
         category = ['Underweight','Normal Weight', 'Overweight', 'Obese' ]
-        bmi = self.calculate()
+        bmi = self.bmi_calculate()
         if bmi < 18.5:
-            return f'BMI: {bmi} Category: {category[0]}'
+            return category[0]
         elif bmi >= 18.5 and bmi <= 24.9:
-            return f'BMI: {bmi} Category: {category[1]}'
+            return category[1]
         elif bmi >= 25 and bmi <= 29.9:
-            return f'BMI: {bmi} Category: {category[2]}'
+            return category[2]
         elif bmi >= 30:
-            return f'BMI: {bmi} Category: {category[3]}'
+            return category[3]
 
 
+    def display_bmi_info(self) -> str:
+        bmi = self.bmi_calculate()
+        category = self.bmi_category()
+        return f'BMI: {bmi} Category: {category}'
                 
 
 
@@ -36,6 +40,7 @@ def main():
    bmi = BMI(125, 5, 3)
 
    print(bmi.get_bmi_category())
+   print(bmi.display_bmi_info())
 
 
 
