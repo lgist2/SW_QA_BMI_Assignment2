@@ -1,0 +1,11 @@
+//python venv
+python -m venv [name of env and store location]
+
+//actvate venv
+path/to/venv/Scripts/activate
+
+//install pytest
+pip install pytest
+
+//run pytest in current directory
+pytest
