@@ -2,5 +2,6 @@
 .pdf
 .txt
 .pytest_cache
+__pytcache__
 .env
 env
