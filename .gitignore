@@ -2,6 +2,13 @@
 .pdf
 .txt
 .pytest_cache
+.dll
+.pyc
+.pyd
+.spec
+.zip
+.toc
+build\bmi\bmi.exe
 __pytcache__
 .env
 env
