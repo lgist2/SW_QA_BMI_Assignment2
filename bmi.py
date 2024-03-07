@@ -1,7 +1,7 @@
 
 
 class BMI():
-    def __init__(self, weight: int, height_feet: int, remaining_height_inches: int):
+    def __init__(self, weight: int = None, height_feet: int = None, remaining_height_inches: int = None):
         self.weight = weight
         self.height_feet = height_feet
         self.remaining_height_inches = remaining_height_inches
@@ -32,7 +32,7 @@ class BMI():
         try:
             if bmi < 18.5:
                 return category[0]
-            elif bmi >= 18.5 and bmi <= 24.9:
+            elif bmi >= 18.6 and bmi <= 24.9:
                 return category[1]
             elif bmi >= 25 and bmi <= 29.9:
                 return category[2]
@@ -41,22 +41,31 @@ class BMI():
         except TypeError:
             return "ERROR: Unable to receive bmi category. Please use numbers only."
 
-    def display_bmi_info(self) -> str:
-        bmi = self.bmi_calculate()
-        category = self.bmi_category()
+    def display_bmi_info(self, bmi: float = None) -> str:
+        if bmi != None:
+            bmi = bmi
+        else:
+            bmi = self.bmi_calculate()
+        category = self.bmi_category(bmi)
         return f'BMI: {bmi} Category: {category}'
                 
 
 
-def main():
-    ...
-#    bmi = BMI(125, 5, 3)
-#    print(bmi.bmi_calculate())
-#    print(bmi.bmi_category())
-#    print(bmi.display_bmi_info())
+def main() -> None:
+    
+    print("BMI Calculator")
+    print("Do not add units to input.\nEx: If you are 5\'10\", enter 5 for height and 10 for remaining inches input.")
+    try:
+        weight = int(input("Enter your weight: "))
+        height = int(input("Enter your height (feet without inches): "))
+        height_inch = int(input("Enter your remaining height in inches: "))
+        bmi = BMI(weight, height, height_inch).display_bmi_info()
+        
+        print(bmi)
+    except ValueError:
+        print("ERROR: Only numbers are allowed for input.")
 
-
-
+    
 
 
 if __name__ == '__main__':
