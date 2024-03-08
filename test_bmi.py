@@ -23,10 +23,11 @@ def test_bmi_calculate(weight, height, height_inch, output):
         [
             (18.4, "Underweight"), #TC Category 01.1
             (18.5, "Normal Weight"), #TC Category 01.2
-            (25, "Overweight"), #TC Category 01.3
-            (24.9, "Normal Weight"), #TC Category 01.4
-            (30, "Obese"), #TC Category 01.5
-            (30.1, "Obese") #TC Category 01.6
+            (24.9, "Normal Weight"), #TC Category 01.3
+            (25, "Overweight"), #TC Category 01.4
+            (29.9, "Overweight"), #TC Category 01.5
+            (30, "Obese"), #TC Category 01.6
+            (30.1, "Obese") #TC Category 01.7
         ]
 )
 def test_bmi_category(bmi, category):

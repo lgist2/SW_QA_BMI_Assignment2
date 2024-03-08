@@ -32,7 +32,7 @@ class BMI():
         try:
             if bmi < 18.5:
                 return category[0]
-            elif bmi >= 18.6 and bmi <= 24.9:
+            elif bmi >= 18.5 and bmi <= 24.9:
                 return category[1]
             elif bmi >= 25 and bmi <= 29.9:
                 return category[2]
@@ -63,7 +63,7 @@ def main() -> None:
         
         print(bmi)
     except ValueError:
-        print("ERROR: Only numbers are allowed for input.")
+        print("ERROR: Please use numbers only")
 
     
 
