@@ -54,10 +54,10 @@ class BMI():
 def main() -> None:
     
     print("BMI Calculator")
-    print("Do not add units to input.\nEx: If you are 5\'10\", enter 5 for height and 10 for remaining inches input.")
+    print("Do not add units to input.\nEx: If you are 5\'10\", enter 5 for height in feet and 10 for remaining height in inches input.\n")
     try:
         weight = int(input("Enter your weight: "))
-        height = int(input("Enter your height (feet without inches): "))
+        height = int(input("Enter your height in feet (feet without inches as described above): "))
         height_inch = int(input("Enter your remaining height in inches: "))
         bmi = BMI(weight, height, height_inch).display_bmi_info()
         
